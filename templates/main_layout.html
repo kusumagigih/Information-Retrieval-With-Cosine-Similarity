@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Undang-Undang Pemilu</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <style>
+        h1 {
+            font-size: 5vh;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        img {
+            margin-right: 10px;
+            width: 10vh;
+            height: 10vh;
+        }
+        body {
+            background: beige url("{{ url_for('static', filename='image/logokpu.png') }}") center/300px no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .search {
+            background: none;
+            border: 0;
+            backdrop-filter: blur(5px);
+        }
+        input {
+            background-repeat: no-repeat;
+            background-size: 35px;
+            background-position: 8px;
+            font-size: 20px;
+            color: darkred;
+
+        }
+
+        input:focus {
+            background-color: #ffff;
+        }
+
+        input#query {
+            font-size: 150%;
+            color: darkred;
+            background-color: beige;
+            border-radius: 10px;
+            padding: 5px 5px 5px 50px;
+            background-image: url("{{ url_for('static', filename='image/logokpu.png') }}");
+        }
+    </style>
+    <body>
+        <nav class="navbar  bg-dark navbar-dark">
+            <div class="container-fluid">
+                <div class="col-auto" ><img src="{{ url_for('static', filename='image/logokpu.png') }}">
+                    <span class="navbar-text text-light ">MENUJU PESTA DEMOKRASI 2024</span>
+                </div>
+            </div>
+        </nav>
+        <!-- <div class="background"> -->
+            <div class="container flex-grow-1 card search py-5">
+                    <div class="card-body">
+                        <h1 class="card-title text-center"><b>Apa yang Anda Ingin Ketahui Tentang Pemilu ?</b></h1>
+                        <form action="/result">
+                            <center>
+                                <input class= "form-control" type="text" id="query" name="query" value="" placeholder="Masukan Pertanyaanmu"><br><br>
+                                <input type="submit" class="btn btn-outline-primary btn-info text-light" value="Submit">
+                                <input type="reset" class="btn btn-outline-danger btn-warning text-light">
+                            </center>
+                        </form>
+                    </div>
+            </div>
+        <!-- </div> -->
+        <footer class="bg-dark text-light">
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col">
+                        <h4>MARI CIPTAKAN PESTA DEMOKRASI YANG HIKMAT DAN BERINTELEKTUAL</h4>
+                        <p></p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </footer>
+    </body>
+</html>
